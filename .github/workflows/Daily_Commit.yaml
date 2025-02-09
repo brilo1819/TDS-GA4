@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Create a new file and commit it
+    - name: 22f3002277@ds.study.iitm.ac.in
       run: |
         echo "Daily commit" > daily_commit.txt
         git config --global user.name "github-actions[bot]"
