@@ -1,22 +1,22 @@
-name: Daily Commit
+name: Daily Commit Workflow
 
 on:
   schedule:
-    - cron: "40 12 * * *" # Runs daily at 18:10 IST (12:40 UTC)
+    - cron: '50 12 * * *'  
 
 jobs:
   daily-commit:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: 22f3002277@ds.study.iitm.ac.in
-      run: |
-        echo "Daily commit" > daily_commit.txt
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "22f3002277@ds.study.iitm.ac.in"
-        git add daily_commit.txt
-        git commit -m "Daily commit $(date)"
-        git push
+      - name: Commit changes with email 22f3002277@ds.study.iitm.ac.in
+        run: |
+          echo "Daily commit" >> commit.txt
+          git config --local user.email "22f3002277@ds.study.iitm.ac.in"
+          git config --local user.name "Automated Commit"
+          git add commit.txt
+          git commit -m "Daily automated commit"
+          git push origin main  # Change 'main' to your default branch if necessary
