@@ -2,7 +2,7 @@ name: Daily Commit Workflow
 
 on:
   schedule:
-    - cron: '50 12 * * *'  
+    - cron: '47 12 * * *'  
 
 jobs:
   daily-commit:
