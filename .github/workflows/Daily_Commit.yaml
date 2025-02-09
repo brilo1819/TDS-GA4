@@ -1,8 +1,8 @@
-name: Daily Commit Workflow
+name: Daily Commit
 
 on:
   schedule:
-    - cron: '50 12 * * *'  
+    - cron: '55 12 * * *'  
 
 jobs:
   daily-commit:
@@ -12,11 +12,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: 22f3002277@ds.study.iitm.ac.in
+      - name: Make changes
         run: |
-          echo "Daily commit" >> commit.txt
+          echo "Daily commit on $(date)" >> daily_commit.txt
+
+      - name: Commit changes
+        run: |
           git config --local user.email "22f3002277@ds.study.iitm.ac.in"
-          git config --local user.name "Automated Commit"
-          git add commit.txt
-          git commit -m "Daily automated commit"
-          git push origin main  # Change 'main' to your default branch if necessary
+          git config --local user.name "brilo1819"
+          git add daily_commit.txt
+          git commit -m "Daily commit"
+
+      - name: 22f3002277@ds.study.iitm.ac.in
+        run: git push origin main
