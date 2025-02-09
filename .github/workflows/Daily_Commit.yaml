@@ -2,7 +2,7 @@ name: Daily Commit Workflow
 
 on:
   schedule:
-    - cron: '47 12 * * *'  
+    - cron: '50 12 * * *'  
 
 jobs:
   daily-commit:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Commit changes with email 22f3002277@ds.study.iitm.ac.in
+      - name: 22f3002277@ds.study.iitm.ac.in
         run: |
           echo "Daily commit" >> commit.txt
           git config --local user.email "22f3002277@ds.study.iitm.ac.in"
