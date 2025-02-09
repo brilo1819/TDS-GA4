@@ -2,14 +2,14 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '55 12 * * *'  
+    - cron: '05 01 * * *'
 
 jobs:
   daily-commit:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 22f3002277@ds.study.iitm.ac.in
         uses: actions/checkout@v2
 
       - name: Make changes
@@ -23,5 +23,5 @@ jobs:
           git add daily_commit.txt
           git commit -m "Daily commit"
 
-      - name: 22f3002277@ds.study.iitm.ac.in
+      - name: Push changes
         run: git push origin main
